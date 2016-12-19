@@ -1,4 +1,5 @@
 from bs4 import BeautifulSoup
+from upload import fetch_photo
 import requests
 
 
@@ -12,6 +13,11 @@ class Unsplash(object):
         a_tags = soup.find_all(title='Download photo')
         for tag in a_tags:
             print('photo href : ', tag.attrs['href'])
+            self.upload(tag.attrs['href'])
+
+    @staticmethod
+    def upload(url):
+        fetch_photo(url)
 
 
 if __name__ == '__main__':
