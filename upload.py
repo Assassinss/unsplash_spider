@@ -17,7 +17,9 @@ def fetch_photo(url):
 
     bucket_name = "unsplash"
 
-    ret, info = bucket.fetch(url, bucket_name)
+    key = '{key}.{mimeType}'.format(key=url[27: 38], mimeType='jpg')
+
+    ret, info = bucket.fetch(url=url, bucket=bucket_name, key=key)
 
     print("ret: ", ret)
     print("info: ", info)
