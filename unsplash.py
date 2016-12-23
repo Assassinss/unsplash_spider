@@ -5,7 +5,7 @@ import requests
 
 class Unsplash(object):
 
-    host = 'https://unsplash.com/'
+    host = 'https://unsplash.com/new'
 
     def fetch_photo_url(self):
         req = requests.get(self.host)
