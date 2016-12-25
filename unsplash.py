@@ -1,5 +1,6 @@
 from bs4 import BeautifulSoup
 from upload import fetch_photo
+from delete import delete
 import requests
 
 
@@ -22,6 +23,8 @@ class Unsplash(object):
 
 if __name__ == '__main__':
     unsplash = Unsplash()
+
+    delete()
 
     unsplash.fetch_photo_url()
 
