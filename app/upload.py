@@ -1,11 +1,17 @@
-from . import bucket, bucket_name
+from . import bucket, photo_bucket
+
+index = 0
 
 
 def fetch_photo(url):
 
-    key = '{key}.{mimeType}'.format(key=url[27: 38], mimeType='jpg')
+    global index
 
-    ret, info = bucket.fetch(url=url, bucket=bucket_name, key=key)
+    index += 1
+
+    key = '{index}-{key}.{mimeType}'.format(index=index, key=url[27: 38], mimeType='jpg')
+
+    ret, info = bucket.fetch(url=url, bucket=photo_bucket, key=key)
 
     print("ret: ", ret)
     print("info: ", info)

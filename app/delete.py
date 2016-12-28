@@ -1,4 +1,4 @@
-from . import bucket, bucket_name
+from . import bucket, photo_bucket
 
 
 def list():
@@ -11,7 +11,7 @@ def list():
 
     marker = None
 
-    ret, eof, info = bucket.list(bucket_name, prefix, marker, limit, delimiter)
+    ret, eof, info = bucket.list(photo_bucket, prefix, marker, limit, delimiter)
 
     print('List status: ', info.status_code)
 
@@ -26,7 +26,7 @@ def delete():
 
     if items:
         for item in items:
-            ret, info = bucket.delete(bucket_name, item['key'])
+            ret, info = bucket.delete(photo_bucket, item['key'])
             if 200 <= info.status_code < 300:
                 print('Delete successfully')
             else:

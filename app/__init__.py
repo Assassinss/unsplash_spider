@@ -11,4 +11,4 @@ def getkey(path):
 auth = Auth(*getkey('app/key.json'))
 bucket = BucketManager(auth)
 
-bucket_name = 'photo'
+photo_bucket = 'photo'
