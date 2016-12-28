@@ -1,7 +1,8 @@
-from bs4 import BeautifulSoup
-from upload import fetch_photo
-from delete import delete
 import requests
+from bs4 import BeautifulSoup
+from app.delete import delete
+
+from app.upload import fetch_photo
 
 
 class Unsplash(object):

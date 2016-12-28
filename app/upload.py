@@ -1,21 +1,7 @@
-# -*- coding: utf-8 -*-
-import json
-from qiniu import Auth, BucketManager
-
-
-def getkey(path):
-    with open(path, 'r') as fp:
-        keys = json.load(fp, encoding='UTF-8')
-        return keys['access_key'], keys['secret_key']
-
-
-q = Auth(*getkey('key.json'))
-bucket = BucketManager(q)
+from . import bucket, bucket_name
 
 
 def fetch_photo(url):
-
-    bucket_name = "photo"
 
     key = '{key}.{mimeType}'.format(key=url[27: 38], mimeType='jpg')
 
