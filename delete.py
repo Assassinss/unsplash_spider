@@ -8,7 +8,7 @@ def getkey(path):
         return keys['access_key'], keys['secret_key']
 
 
-bucket_name = 'unsplash'
+bucket_name = 'photo'
 q = Auth(*getkey('key.json'))
 bucket = BucketManager(q)
 

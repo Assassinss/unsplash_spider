@@ -15,7 +15,7 @@ bucket = BucketManager(q)
 
 def fetch_photo(url):
 
-    bucket_name = "unsplash"
+    bucket_name = "photo"
 
     key = '{key}.{mimeType}'.format(key=url[27: 38], mimeType='jpg')
 
